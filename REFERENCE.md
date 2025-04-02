@@ -76,7 +76,7 @@ Default value: `undef`
 
 ##### <a name="-github_actions_runner--personal_access_token"></a>`personal_access_token`
 
-Data type: `String[1]`
+Data type: `Variant[Sensitive[String[1]],String[1]]`
 
 GitHub PAT with admin permission on the repositories or the origanization.
 
@@ -251,7 +251,7 @@ Default value: `$github_actions_runner::enterprise_name`
 
 ##### <a name="-github_actions_runner--instance--personal_access_token"></a>`personal_access_token`
 
-Data type: `String[1]`
+Data type: `Variant[Sensitive[String[1]],String[1]]`
 
 GitHub PAT with admin permission on the repositories or the origanization.(Default: Value set by github_actions_runner Class)
 
