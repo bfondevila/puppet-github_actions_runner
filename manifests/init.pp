@@ -51,7 +51,7 @@ class github_actions_runner (
 
   file { $github_actions_runner::root_dir:
     ensure => $ensure_directory,
-    mode   => '0640',
+    mode   => '0750',
     owner  => $github_actions_runner::user,
     group  => $github_actions_runner::group,
     force  => true,
