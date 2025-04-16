@@ -22,7 +22,7 @@
 # @param env List of variables to be used as env variables in the instance runner. If not defined, file ".env" will be kept as created by the runner scripts. (Default: Value set by github_actions_runner Class)
 #
 class github_actions_runner (
-  String[1]                      $personal_access_token = 'PAT',
+  Variant[Sensitive[String[1]],String[1]] $personal_access_token = 'PAT',
   Enum['present', 'absent']      $ensure = 'present',
   Stdlib::Absolutepath           $base_dir_name = '/some_dir/actions-runner',
   String[1]                      $package_name = $facts['os']['architecture'] ? { /x86_64|amd64/ => 'actions-runner-linux-x64', 'aarch64' => 'actions-runner-linux-arm64' },

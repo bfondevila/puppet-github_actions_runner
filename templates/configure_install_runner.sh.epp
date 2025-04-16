@@ -1,4 +1,4 @@
-<%- | String $personal_access_token,
+<%- | Variant[Sensitive,String] $personal_access_token,
       String $token_url,
       String $instance_name,
       String $root_dir,

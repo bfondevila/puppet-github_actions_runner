@@ -324,6 +324,16 @@ describe 'github_actions_runner' do
         end
       end
 
+      context 'is expected to create a github_actions_runner installation script with test_PAT in content when using as Sensitive' do
+        let(:params) do
+          super().merge('personal_access_token' => sensitive('test_PAT'))
+        end
+
+        it do
+          is_expected.to contain_file('/some_dir/actions-runner-2.319.1/first_runner/configure_install_runner.sh').with_content(%r{authorization: token test_PAT})
+        end
+      end
+
       context 'is expected to create a github_actions_runner installation script with disableupdate in content' do
         let(:params) do
           super().merge('disable_update' => true)
