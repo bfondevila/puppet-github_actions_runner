@@ -82,7 +82,7 @@ define github_actions_runner::instance (
 
   file { "${github_actions_runner::root_dir}/${instance_name}":
     ensure  => $ensure_instance_directory,
-    mode    => '0644',
+    mode    => '0750',
     owner   => $user,
     group   => $group,
     force   => true,
